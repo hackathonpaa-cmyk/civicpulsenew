@@ -1,84 +1,26 @@
-<?php
-
-require "db.php";
-
-$message = "";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    // Check whether email already exists
-    $sql = "SELECT id FROM users WHERE email = ?";
-
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-
-        $message = "An account with this email already exists.";
-
-    } else {
-
-        // Hash the password before storing it
-        $hashedPassword = password_hash(
-            $password,
-            PASSWORD_DEFAULT
-        );
-
-        $sql = "INSERT INTO users (email, password)
-                VALUES (?, ?)";
-
-        $stmt = $conn->prepare($sql);
-
-        $stmt->bind_param(
-            "ss",
-            $email,
-            $hashedPassword
-        );
-
-        if ($stmt->execute()) {
-
-            $message = "Account created successfully!";
-
-        } else {
-
-            $message = "Something went wrong.";
-
-        }
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <title>Create Account</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Education in AI</title>
 </head>
 
 <body>
 
-    <h1>Create Account</h1>
+    <h2>Create Account</h2>
 
-    <?php
+    <form action="register.php" method="POST">
 
-    if ($message != "") {
-        echo "<p>$message</p>";
-    }
+        <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+        >
 
-    ?>
-
-    <form action="signin.php" method="POST">
+        <br><br>
 
         <input
             type="email"
@@ -99,16 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <br><br>
 
         <button type="submit">
-            Create Account
+            Register
         </button>
 
     </form>
-
-    <br>
-
-    <a href="index.php">
-        Already have an account? Login
-    </a>
 
 </body>
 

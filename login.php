@@ -1,52 +1,44 @@
 <?php
 
-session_start();
+include "db.php";
 
-require "db.php";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    die("Please login using the login form.");
-}
+    $email = trim($_POST["email"]);
+    $password = $_POST["password"];
 
-$email = $_POST["email"];
-$password = $_POST["password"];
+    $stmt = $conn->prepare(
+        "SELECT id, name, password
+         FROM users
+         WHERE email = ?"
+    );
 
-$sql = "SELECT id, email, password FROM users WHERE email = ?";
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
 
-$stmt = $conn->prepare($sql);
+    $result = $stmt->get_result();
 
-if (!$stmt) {
-    die("SQL error: " . $conn->error);
-}
+    if ($result->num_rows == 1) {
 
-$stmt->bind_param("s", $email);
+        $user = $result->fetch_assoc();
 
-$stmt->execute();
+        if (password_verify($password, $user["password"])) {
 
-$result = $stmt->get_result();
+            header("Location: dashboard.html");
+            exit();
 
-if ($result->num_rows === 1) {
+        } else {
 
-    $user = $result->fetch_assoc();
-
-    if (password_verify($password, $user["password"])) {
-
-        $_SESSION["user_id"] = $user["id"];
-        $_SESSION["email"] = $user["email"];
-
-        echo "Login successful!";
-        header("Location:dashboard.html");
+            echo "Incorrect password.";
+        }
 
     } else {
 
-        echo "Incorrect password.";
-
+        echo "Account not found.";
     }
 
-} else {
-
-    echo "No account found with this email.";
-
+    $stmt->close();
+    $conn->close();
 }
 
 ?>

@@ -68,77 +68,49 @@
 
         <!-- LOGIN FORM -->
 
-        <form action="login.php" method="POST">
+       <form action="login.php" method="POST">
 
-            <div class="input-box">
+    <div class="input-box">
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+        >
+    </div>
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                >
+    <div class="input-box">
+        <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+        >
+    </div>
 
-            </div>
+    <div class="login-options">
 
+        <label>
+            <input
+                type="checkbox"
+                name="remember"
+            >
+            Remember me
+        </label>
 
-            <div class="input-box">
-
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    required
-                >
-
-            </div>
-
-
-            <div class="login-options">
-
-                <label>
-
-                    <input
-                        type="checkbox"
-                        name="remember"
-                    >
-
-                    Remember me
-
-                </label>
-
-
-                <a href="#">
-                    Forgot Password?
-                </a>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="login-btn">
-
-                Login
-
-            </button>
-
-        </form>
-
-
-        <!-- REGISTER -->
-
-        <div class="register">
-
-            Don't have an account?
-
-            <a href="signup.php">
-                Register
-            </a>
-
-        </div>
+        <a href="#">
+            Forgot Password?
+        </a>
 
     </div>
+
+    <button
+        type="submit"
+        class="login-btn">
+        Login
+    </button>
+
+</form>
 
 </body>
 
