@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>StudyAI</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,10 +20,16 @@
 
             <div class="profile">
 
-                <button class="btn" id="lightBtn">☀️</button>
-                <button class="btn active" id="darkBtn">🌙</button>
+                <button class="btn" id="lightBtn">
+                    ☀️
+                </button>
+
+                <button class="btn active" id="darkBtn">
+                    🌙
+                </button>
 
                 <span>🔔</span>
+
                 <span>👤</span>
 
             </div>
@@ -40,14 +48,22 @@
             <ul>
 
                 <li>
-                    <button class="menu active" data-page="ask">
-                        Ask AI
+                    <button
+                        class="menu active"
+                        data-page="ask">
+
+                        ✨ Ask AI
+
                     </button>
                 </li>
 
                 <li>
-                    <button class="menu" data-page="summary">
-                        AI Summarize
+                    <button
+                        class="menu"
+                        data-page="summary">
+
+                        📝 AI Summarize
+
                     </button>
                 </li>
 
@@ -61,8 +77,13 @@
                 </div>
 
                 <div>
+
                     <b>Piyush</b>
-                    <small>Student</small>
+
+                    <small>
+                        Student
+                    </small>
+
                 </div>
 
             </div>
@@ -73,31 +94,49 @@
         <div class="right">
 
 
-            <div class="page ask-page" id="askPage">
+            <div
+                class="page ask-page"
+                id="askPage">
+
 
                 <div class="ask-header">
 
                     <span>✨</span>
 
                     <div>
-                        <h3>Ask AI</h3>
-                        <p>Your personal study assistant</p>
+
+                        <h3>
+                            Ask AI
+                        </h3>
+
+                        <p>
+                            Your personal study assistant
+                        </p>
+
                     </div>
 
                 </div>
 
 
-                <div class="chat" id="chat">
+                <div
+                    class="chat"
+                    id="chat">
 
-                    <div class="welcome" id="welcome">
+
+                    <div
+                        class="welcome"
+                        id="welcome">
+
 
                         <div class="brain">
                             🧠
                         </div>
 
+
                         <h1>
                             What do you want to learn?
                         </h1>
+
 
                         <p>
                             Ask questions or get help with school.
@@ -106,23 +145,41 @@
 
                         <div class="suggestions">
 
-                            <button data-text="Explain a difficult topic">
-                                Explain something
+
+                            <button
+                                data-text="Explain Newton's first law simply">
+
+                                🌱 Explain something
+
                             </button>
 
-                            <button data-text="Make me a study plan">
-                                Make study plan
+
+                            <button
+                                data-text="Make me a study plan for today">
+
+                                🎯 Make study plan
+
                             </button>
 
-                            <button data-text="Recommend some books">
-                                Recommend books
+
+                            <button
+                                data-text="Recommend books about artificial intelligence">
+
+                                📚 Recommend books
+
                             </button>
 
-                            <button data-text="Help me find my weak areas">
-                                Find weak areas
+
+                            <button
+                                data-text="Help me identify my weak areas in mathematics">
+
+                                🔍 Find weak areas
+
                             </button>
+
 
                         </div>
+
 
                     </div>
 
@@ -131,36 +188,54 @@
 
                 <div class="input-box">
 
+
                     <button id="attach">
                         +
                     </button>
+
 
                     <textarea
                         id="userInput"
                         placeholder="Ask StudyAI anything..."
                         rows="1"></textarea>
 
+
                     <button id="send">
                         ↑
                     </button>
 
+
                 </div>
 
+
                 <p class="small-text">
-                    StudyAI can make mistakes. Check important information.
+
+                    StudyAI can make mistakes.
+                    Check important information.
+
                 </p>
 
-                <input type="file" id="file" hidden>
+
+                <input
+                    type="file"
+                    id="file"
+                    hidden>
+
 
             </div>
 
 
 
-            <div class="page summary-page" id="summaryPage">
+            <div
+                class="page summary-page"
+                id="summaryPage">
+
 
                 <div class="summary-title">
 
-                    <h1>📝 AI Summarize</h1>
+                    <h1>
+                        📝 AI Summarize
+                    </h1>
 
                     <p>
                         Turn your long notes into simple study points.
@@ -174,15 +249,19 @@
 
                     <div class="notes-box">
 
+
                         <div class="box-title">
 
-                            <h3>Your Notes</h3>
+                            <h3>
+                                Your Notes
+                            </h3>
 
                             <span id="count">
                                 0 words
                             </span>
 
                         </div>
+
 
                         <textarea
                             id="notes"
@@ -191,18 +270,35 @@
 
                         <div class="summary-options">
 
-                            <span>Type:</span>
+                            <span>
+                                Type:
+                            </span>
 
-                            <button class="option active">
+
+                            <button
+                                class="option active"
+                                data-type="short">
+
                                 Short
+
                             </button>
 
-                            <button class="option">
+
+                            <button
+                                class="option"
+                                data-type="detailed">
+
                                 Detailed
+
                             </button>
 
-                            <button class="option">
+
+                            <button
+                                class="option"
+                                data-type="exam">
+
                                 Exam
+
                             </button>
 
                         </div>
@@ -216,15 +312,20 @@
 
                         </button>
 
+
                     </div>
 
 
 
                     <div class="result-box">
 
+
                         <div class="box-title">
 
-                            <h3>AI Summary</h3>
+                            <h3>
+                                AI Summary
+                            </h3>
+
 
                             <button id="copy">
                                 Copy
@@ -232,13 +333,19 @@
 
                         </div>
 
+
                         <div id="result">
+
 
                             <div class="empty">
 
-                                <div>📝</div>
+                                <div>
+                                    📝
+                                </div>
 
-                                <h3>Your summary will appear here</h3>
+                                <h3>
+                                    Your summary will appear here
+                                </h3>
 
                                 <p>
                                     Add your notes and click summarize.
@@ -246,13 +353,17 @@
 
                             </div>
 
+
                         </div>
 
+
                     </div>
+
 
                 </div>
 
             </div>
+
 
         </div>
 

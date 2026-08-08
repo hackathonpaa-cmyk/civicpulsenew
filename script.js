@@ -35,6 +35,7 @@ menus.forEach(function(menu) {
 
         menu.classList.add("active");
 
+
         if (menu.dataset.page === "summary") {
 
             askPage.style.display = "none";
@@ -81,7 +82,7 @@ input.addEventListener("keydown", function(event) {
 });
 
 
-function sendMessage() {
+async function sendMessage() {
 
     let text = input.value.trim();
 
@@ -89,11 +90,13 @@ function sendMessage() {
         return;
     }
 
+
     let welcome = document.getElementById("welcome");
 
     if (welcome) {
         welcome.remove();
     }
+
 
     let user = document.createElement("div");
 
@@ -107,7 +110,9 @@ function sendMessage() {
 
     chat.appendChild(user);
 
+
     input.value = "";
+
 
     let ai = document.createElement("div");
 
@@ -119,18 +124,55 @@ function sendMessage() {
         </div>
 
         <div class="message-content">
-            I'm still a demo for now. Soon this message
-            will come from your AI API.
+            Thinking...
         </div>
     `;
 
-    setTimeout(function() {
+    chat.appendChild(ai);
 
-        chat.appendChild(ai);
+    chat.scrollTop = chat.scrollHeight;
 
-        chat.scrollTop = chat.scrollHeight;
 
-    }, 600);
+    try {
+
+        let response = await fetch("/ask", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                message: text
+            })
+
+        });
+
+
+        let data = await response.json();
+
+
+        if (!response.ok) {
+            throw new Error(data.answer);
+        }
+
+
+        ai.querySelector(".message-content").textContent =
+            data.answer;
+
+
+    } catch (error) {
+
+        console.log(error);
+
+        ai.querySelector(".message-content").textContent =
+            "Sorry, I couldn't connect to the AI.";
+
+    }
+
+
+    chat.scrollTop = chat.scrollHeight;
 
 }
 
@@ -147,6 +189,7 @@ notes.addEventListener("input", function() {
 
     }
 
+
     let words = text.split(/\s+/).length;
 
     count.textContent = words + " words";
@@ -154,7 +197,7 @@ notes.addEventListener("input", function() {
 });
 
 
-summarize.addEventListener("click", function() {
+summarize.addEventListener("click", async function() {
 
     let text = notes.value.trim();
 
@@ -166,44 +209,95 @@ summarize.addEventListener("click", function() {
 
     }
 
+    let selected = document.querySelector(".option.active");
+
+    let type = selected.textContent;
+
     result.innerHTML = `
-        <div class="summary-part">
-
-            <h3>📌 Main idea</h3>
-
-            <p>
-                Your AI-generated explanation will appear
-                here once the AI API is connected.
-            </p>
-
-        </div>
-
-        <div class="summary-part">
-
-            <h3>🔑 Key points</h3>
-
-            <ul>
-                <li>Important concept</li>
-                <li>Important definition</li>
-                <li>Important explanation</li>
-                <li>Important exam point</li>
-            </ul>
-
-        </div>
-
-        <div class="summary-part">
-
-            <h3>🎯 Exam focus</h3>
-
-            <p>
-                The AI will identify the parts that are
-                most useful for your exam.
-            </p>
-
+        <div class="empty">
+            <div>🧠</div>
+            <h3>AI is summarizing...</h3>
+            <p>Please wait.</p>
         </div>
     `;
 
+    try {
+
+        let response = await fetch("/summarize", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                notes: text,
+                type: type
+            })
+
+        });
+
+
+        let data = await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(data.answer);
+
+        }
+
+
+        result.innerHTML = `
+            <div class="summary-part">
+
+                <h3>📝 Summary</h3>
+
+                <p>
+                    ${data.answer.replace(/\n/g, "<br>")}
+                </p>
+
+            </div>
+        `;
+
+
+    } catch (error) {
+
+        console.log(error);
+
+        result.innerHTML = `
+            <div class="summary-part">
+
+                <h3>⚠️ Error</h3>
+
+                <p>
+                    ${error.message}
+                </p>
+
+            </div>
+        `;
+
+    }
+
 });
+
+
+function getSummaryType() {
+
+    let active = document.querySelector(".option.active");
+
+    return active.dataset.type;
+
+}
+
+
+function formatAnswer(text) {
+
+    return text
+        .replace(/\n/g, "<br>");
+
+}
 
 
 copy.addEventListener("click", function() {
@@ -213,7 +307,9 @@ copy.addEventListener("click", function() {
     copy.textContent = "Copied";
 
     setTimeout(function() {
+
         copy.textContent = "Copy";
+
     }, 1500);
 
 });
@@ -258,6 +354,7 @@ lightBtn.addEventListener("click", function() {
     document.body.classList.add("light");
 
     lightBtn.classList.add("active");
+
     darkBtn.classList.remove("active");
 
 });
@@ -268,6 +365,7 @@ darkBtn.addEventListener("click", function() {
     document.body.classList.remove("light");
 
     darkBtn.classList.add("active");
+
     lightBtn.classList.remove("active");
 
 });

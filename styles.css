@@ -7,7 +7,7 @@
 
 body {
     background: #080c1c;
-    color: #f5f5f5;
+    color: white;
     transition: 0.3s;
 }
 
@@ -22,7 +22,6 @@ button {
     margin: 20px auto 0;
     background: #10162b;
     border: 1px solid #252d49;
-    /* border-radius: 12px 12px 0 0; */
 }
 
 .nav {
@@ -35,7 +34,6 @@ button {
 
 .nav h2 {
     font-size: 22px;
-    color: white;
 }
 
 .profile {
@@ -69,7 +67,6 @@ button {
     background: #0d1224;
     border: 1px solid #252d49;
     border-top: none;
-    /* border-radius: 0 0 12px 12px; */
     overflow: hidden;
 }
 
@@ -85,7 +82,6 @@ button {
 .left h1 {
     font-size: 18px;
     margin: 5px 10px 30px;
-    color: white;
 }
 
 .left ul {
@@ -188,7 +184,6 @@ button {
 
 .ask-header h3 {
     font-size: 15px;
-    color: white;
 }
 
 .ask-header p {
@@ -226,7 +221,6 @@ button {
 .welcome h1 {
     font-size: 27px;
     font-weight: 600;
-    color: white;
     margin-bottom: 8px;
 }
 
@@ -274,6 +268,7 @@ button {
     font-size: 13px;
     line-height: 1.6;
     border-radius: 10px;
+    white-space: pre-wrap;
 }
 
 .message.user .message-content {
@@ -334,19 +329,10 @@ button {
     font-size: 20px;
 }
 
-#attach:hover {
-    background: #1a2138;
-    color: white;
-}
-
 #send {
     background: #ffae00;
     color: #080c1c;
     font-size: 19px;
-}
-
-#send:hover {
-    background: #ffc13a;
 }
 
 .small-text {
@@ -360,7 +346,6 @@ button {
     display: none;
     padding: 30px;
     overflow-y: auto;
-    background: #0d1224;
 }
 
 .summary-title {
@@ -369,8 +354,6 @@ button {
 
 .summary-title h1 {
     font-size: 24px;
-    font-weight: 600;
-    color: white;
     margin-bottom: 6px;
 }
 
@@ -402,7 +385,6 @@ button {
 
 .box-title h3 {
     font-size: 14px;
-    color: white;
 }
 
 .box-title span {
@@ -418,11 +400,6 @@ button {
     padding: 6px 9px;
 }
 
-.box-title button:hover {
-    background: #ffae00;
-    color: #080c1c;
-}
-
 #notes {
     width: 100%;
     height: 300px;
@@ -434,10 +411,6 @@ button {
     color: white;
     padding: 12px;
     font-size: 13px;
-}
-
-#notes::placeholder {
-    color: #606981;
 }
 
 #notes:focus {
@@ -465,11 +438,6 @@ button {
     color: #9da5b8;
 }
 
-.option:hover {
-    background: #252d47;
-    color: white;
-}
-
 .option.active {
     background: #ffae00;
     color: #080c1c;
@@ -485,10 +453,6 @@ button {
     color: #080c1c;
     font-size: 13px;
     font-weight: bold;
-}
-
-.summary-button:hover {
-    background: #ffc13a;
 }
 
 #result {
@@ -515,7 +479,6 @@ button {
 
 .empty p {
     font-size: 11px;
-    color: #697188;
 }
 
 .summary-part {
@@ -527,12 +490,10 @@ button {
 .summary-part h3 {
     font-size: 15px;
     margin-bottom: 8px;
-    color: white;
 }
 
 .summary-part p,
 .summary-part li {
-    font-family: Arial, sans-serif;
     font-size: 12px;
     line-height: 1.7;
     color: #aeb5c7;
@@ -555,20 +516,13 @@ button {
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #ffae00;
-}
-
-
-/* LIGHT MODE */
-
 body.light {
     background: #eeeeee;
     color: #171717;
 }
 
 body.light .navbar {
-    background: #ffffff;
+    background: white;
     border-color: #dddddd;
 }
 
@@ -576,12 +530,8 @@ body.light .nav h2 {
     color: #171717;
 }
 
-body.light .profile {
-    color: #444444;
-}
-
 body.light .dashboard {
-    background: #ffffff;
+    background: white;
     border-color: #dddddd;
 }
 
@@ -603,25 +553,12 @@ body.light .menu:hover {
     color: #111111;
 }
 
-body.light .menu.active {
-    background: #ffae00;
-    color: #111111;
-}
-
-body.light .profile-box {
-    border-color: #dddddd;
-}
-
-body.light .profile-box small {
-    color: #777777;
-}
-
 body.light .right {
-    background: #ffffff;
+    background: white;
 }
 
 body.light .ask-header {
-    background: #ffffff;
+    background: white;
     border-color: #dddddd;
 }
 
@@ -629,32 +566,14 @@ body.light .ask-header h3 {
     color: #111111;
 }
 
-body.light .ask-header p {
-    color: #777777;
-}
-
 body.light .welcome h1 {
     color: #111111;
 }
 
-body.light .welcome p {
-    color: #777777;
-}
-
-body.light .brain {
-    background: #fff3c4;
-    border-color: #dddddd;
-}
-
 body.light .suggestions button {
-    background: #ffffff;
+    background: white;
     border-color: #dddddd;
     color: #333333;
-}
-
-body.light .suggestions button:hover {
-    background: #fff4c9;
-    border-color: #ffae00;
 }
 
 body.light .message.ai .message-content {
@@ -664,7 +583,7 @@ body.light .message.ai .message-content {
 }
 
 body.light .input-box {
-    background: #ffffff;
+    background: white;
     border-color: #cccccc;
 }
 
@@ -672,47 +591,14 @@ body.light .input-box textarea {
     color: #111111;
 }
 
-body.light .input-box textarea::placeholder {
-    color: #999999;
-}
-
-body.light #attach {
-    color: #555555;
-}
-
-body.light #attach:hover {
-    background: #eeeeee;
-}
-
 body.light .summary-page {
-    background: #ffffff;
-}
-
-body.light .summary-title h1 {
-    color: #111111;
-}
-
-body.light .summary-title p {
-    color: #777777;
+    background: white;
 }
 
 body.light .notes-box,
 body.light .result-box {
-    background: #ffffff;
+    background: white;
     border-color: #dddddd;
-}
-
-body.light .box-title h3 {
-    color: #111111;
-}
-
-body.light .box-title span {
-    color: #888888;
-}
-
-body.light .box-title button {
-    background: #eeeeee;
-    color: #333333;
 }
 
 body.light #notes {
@@ -721,56 +607,9 @@ body.light #notes {
     border-color: #cccccc;
 }
 
-body.light #notes::placeholder {
-    color: #999999;
-}
-
-body.light .summary-options span {
-    color: #777777;
-}
-
-body.light .option {
-    background: #eeeeee;
-    color: #444444;
-}
-
-body.light .option:hover {
-    background: #ffe29a;
-}
-
-body.light .empty {
-    color: #999999;
-}
-
-body.light .empty h3 {
-    color: #444444;
-}
-
-body.light .empty p {
-    color: #888888;
-}
-
-body.light .summary-part {
-    border-color: #eeeeee;
-}
-
-body.light .summary-part h3 {
-    color: #222222;
-}
-
-body.light .summary-part p,
-body.light .summary-part li {
-    color: #555555;
-}
-
-body.light .btn:hover {
-    background: #eeeeee;
-}
-
 body.light .btn.active {
     background: #ffae00;
 }
-
 
 @media (max-width: 800px) {
 
@@ -787,10 +626,6 @@ body.light .btn.active {
         width: calc(100% - 180px);
     }
 
-    .input-box {
-        width: 90%;
-    }
-
     .summary-container {
         flex-direction: column;
     }
@@ -799,18 +634,14 @@ body.light .btn.active {
     .result-box {
         width: 100%;
     }
-}
 
+}
 
 @media (max-width: 600px) {
 
     .navbar,
     .dashboard {
         width: 100%;
-    }
-
-    .navbar {
-        margin-top: 0;
     }
 
     .left {
@@ -830,10 +661,6 @@ body.light .btn.active {
         text-align: center;
     }
 
-    .menu::first-letter {
-        font-size: 18px;
-    }
-
     .profile-box div:last-child {
         display: none;
     }
@@ -846,19 +673,8 @@ body.light .btn.active {
         grid-template-columns: 1fr;
     }
 
-    .welcome {
-        margin-top: 50px;
-    }
-
     .welcome h1 {
         font-size: 21px;
     }
 
-    .summary-page {
-        padding: 18px;
-    }
-
-    .summary-title h1 {
-        font-size: 20px;
-    }
 }
