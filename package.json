@@ -1,0 +1,27 @@
+{
+  "name": "civicpulsenew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackathonpaa-cmyk/civicpulsenew.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/hackathonpaa-cmyk/civicpulsenew/issues"
+  },
+  "homepage": "https://github.com/hackathonpaa-cmyk/civicpulsenew#readme",
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
