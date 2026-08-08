@@ -4,38 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>StudyAI</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <div class="navbar">
-
         <div class="nav">
 
             <h2>🧠 StudyAI</h2>
 
             <div class="profile">
-
-                <button class="btn" id="lightBtn">
-                    ☀️
-                </button>
-
-                <button class="btn active" id="darkBtn">
-                    🌙
-                </button>
-
+                <button class="btn" id="lightBtn">☀️</button>
+                <button class="btn active" id="darkBtn">🌙</button>
                 <span>🔔</span>
-
                 <span>👤</span>
-
             </div>
 
         </div>
-
     </div>
 
 
@@ -48,27 +35,24 @@
             <ul>
 
                 <li>
-                    <button
-                        class="menu active"
-                        data-page="ask">
-
-                        ✨ Ask AI
-
+                    <button class="menu active" data-page="ask">
+                        🤖 Ask AI
                     </button>
                 </li>
 
                 <li>
-                    <button
-                        class="menu"
-                        data-page="summary">
-
+                    <button class="menu" data-page="summary">
                         📝 AI Summarize
+                    </button>
+                </li>
 
+                <li>
+                    <button class="menu" data-page="result">
+                        📊 Result Analyzer
                     </button>
                 </li>
 
             </ul>
-
 
             <div class="profile-box">
 
@@ -77,13 +61,8 @@
                 </div>
 
                 <div>
-
                     <b>Piyush</b>
-
-                    <small>
-                        Student
-                    </small>
-
+                    <small>Student</small>
                 </div>
 
             </div>
@@ -94,92 +73,57 @@
         <div class="right">
 
 
-            <div
-                class="page ask-page"
-                id="askPage">
+            <!-- ASK AI -->
 
+            <div class="page ask-page" id="askPage">
 
                 <div class="ask-header">
 
                     <span>✨</span>
 
                     <div>
-
-                        <h3>
-                            Ask AI
-                        </h3>
-
-                        <p>
-                            Your personal study assistant
-                        </p>
-
+                        <h3>Ask AI</h3>
+                        <p>Your personal study assistant</p>
                     </div>
 
                 </div>
 
 
-                <div
-                    class="chat"
-                    id="chat">
+                <div class="chat" id="chat">
 
-
-                    <div
-                        class="welcome"
-                        id="welcome">
-
+                    <div class="welcome" id="welcome">
 
                         <div class="brain">
                             🧠
                         </div>
 
-
                         <h1>
                             What do you want to learn?
                         </h1>
-
 
                         <p>
                             Ask questions or get help with school.
                         </p>
 
-
                         <div class="suggestions">
 
-
-                            <button
-                                data-text="Explain Newton's first law simply">
-
-                                🌱 Explain something
-
+                            <button data-text="Explain Newton's first law simply">
+                                Explain a topic
                             </button>
 
-
-                            <button
-                                data-text="Make me a study plan for today">
-
-                                🎯 Make study plan
-
+                            <button data-text="Make me a study plan">
+                                Make study plan
                             </button>
 
-
-                            <button
-                                data-text="Recommend books about artificial intelligence">
-
-                                📚 Recommend books
-
+                            <button data-text="Give me important exam tips">
+                                Exam tips
                             </button>
 
-
-                            <button
-                                data-text="Help me identify my weak areas in mathematics">
-
-                                🔍 Find weak areas
-
+                            <button data-text="Explain this concept like I am a beginner">
+                                Simplify concept
                             </button>
-
 
                         </div>
-
 
                     </div>
 
@@ -188,54 +132,34 @@
 
                 <div class="input-box">
 
-
-                    <button id="attach">
-                        +
-                    </button>
-
+                    <button id="attach">+</button>
 
                     <textarea
                         id="userInput"
                         placeholder="Ask StudyAI anything..."
                         rows="1"></textarea>
 
-
-                    <button id="send">
-                        ↑
-                    </button>
-
+                    <button id="send">↑</button>
 
                 </div>
 
-
                 <p class="small-text">
-
-                    StudyAI can make mistakes.
-                    Check important information.
-
+                    StudyAI can make mistakes. Check important information.
                 </p>
 
-
-                <input
-                    type="file"
-                    id="file"
-                    hidden>
-
+                <input type="file" id="file" hidden>
 
             </div>
 
 
 
-            <div
-                class="page summary-page"
-                id="summaryPage">
+            <!-- AI SUMMARY -->
 
+            <div class="page summary-page" id="summaryPage">
 
                 <div class="summary-title">
 
-                    <h1>
-                        📝 AI Summarize
-                    </h1>
+                    <h1>📝 AI Summarize</h1>
 
                     <p>
                         Turn your long notes into simple study points.
@@ -249,12 +173,9 @@
 
                     <div class="notes-box">
 
-
                         <div class="box-title">
 
-                            <h3>
-                                Your Notes
-                            </h3>
+                            <h3>Your Notes</h3>
 
                             <span id="count">
                                 0 words
@@ -270,35 +191,18 @@
 
                         <div class="summary-options">
 
-                            <span>
-                                Type:
-                            </span>
+                            <span>Type:</span>
 
-
-                            <button
-                                class="option active"
-                                data-type="short">
-
+                            <button class="option active">
                                 Short
-
                             </button>
 
-
-                            <button
-                                class="option"
-                                data-type="detailed">
-
+                            <button class="option">
                                 Detailed
-
                             </button>
 
-
-                            <button
-                                class="option"
-                                data-type="exam">
-
+                            <button class="option">
                                 Exam
-
                             </button>
 
                         </div>
@@ -312,20 +216,14 @@
 
                         </button>
 
-
                     </div>
-
 
 
                     <div class="result-box">
 
-
                         <div class="box-title">
 
-                            <h3>
-                                AI Summary
-                            </h3>
-
+                            <h3>AI Summary</h3>
 
                             <button id="copy">
                                 Copy
@@ -336,12 +234,9 @@
 
                         <div id="result">
 
-
                             <div class="empty">
 
-                                <div>
-                                    📝
-                                </div>
+                                <div>📝</div>
 
                                 <h3>
                                     Your summary will appear here
@@ -353,17 +248,217 @@
 
                             </div>
 
-
                         </div>
 
-
                     </div>
-
 
                 </div>
 
             </div>
 
+
+
+            <!-- NEB RESULT ANALYZER -->
+
+            <div class="page result-page" id="resultPage">
+
+                <div class="result-title">
+
+                    <h1>📊 NEB Result Analyzer</h1>
+
+                    <p>
+                        Enter your grades to calculate your GPA
+                        and analyze your performance.
+                    </p>
+
+                </div>
+
+
+                <div class="result-container">
+
+
+                    <!-- GRADES -->
+
+                    <div class="grade-box">
+
+                        <div class="box-title">
+
+                            <h3>Enter Your Grades</h3>
+
+                        </div>
+
+
+                        <div class="subject">
+
+                            <label for="physics">
+                                Physics
+                            </label>
+
+                            <input
+                                class="grade"
+                                id="physics"
+                                type="text"
+                                placeholder="A+"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="subject">
+
+                            <label for="chemistry">
+                                Chemistry
+                            </label>
+
+                            <input
+                                class="grade"
+                                id="chemistry"
+                                type="text"
+                                placeholder="A"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="subject">
+
+                            <label for="math">
+                                Mathematics
+                            </label>
+
+                            <input
+                                class="grade"
+                                id="math"
+                                type="text"
+                                placeholder="A+"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="subject">
+
+                            <label for="biology">
+                                Biology
+                            </label>
+
+                            <input
+                                class="grade"
+                                id="biology"
+                                type="text"
+                                placeholder="B+"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="subject">
+
+                            <label for="english">
+                                English
+                            </label>
+
+                            <input
+                                class="grade"
+                                id="english"
+                                type="text"
+                                placeholder="A"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="subject">
+
+                            <label for="nepali">
+                                Nepali
+                            </label>
+
+                            <input
+                                class="grade"
+                                id="nepali"
+                                type="text"
+                                placeholder="B+"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <button
+                            id="calculate"
+                            class="calculate-button"
+                            type="button">
+
+                            📊 Calculate GPA
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ANALYSIS -->
+
+                    <div class="analysis-box">
+
+                        <div class="box-title">
+
+                            <h3>Your Analysis</h3>
+
+                        </div>
+
+
+                        <div class="gpa">
+
+                            <span id="gpa">
+                                --
+                            </span>
+
+                            <small>
+                                Estimated GPA
+                            </small>
+
+                        </div>
+
+
+                        <div class="performance">
+
+                            <h3>
+                                Subject Performance
+                            </h3>
+
+                            <div id="performance">
+
+                                <p>
+                                    Enter your grades and click
+                                    Calculate GPA.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="improvement-box">
+
+                    <h3>
+                        📈 Improvement Report
+                    </h3>
+
+                    <div id="improvement">
+
+                        Enter your grades to see your
+                        personalized improvement report.
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 

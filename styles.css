@@ -7,7 +7,7 @@
 
 body {
     background: #080c1c;
-    color: white;
+    color: #f5f5f5;
     transition: 0.3s;
 }
 
@@ -34,6 +34,7 @@ button {
 
 .nav h2 {
     font-size: 22px;
+    color: white;
 }
 
 .profile {
@@ -82,6 +83,7 @@ button {
 .left h1 {
     font-size: 18px;
     margin: 5px 10px 30px;
+    color: white;
 }
 
 .left ul {
@@ -163,6 +165,9 @@ button {
     height: 82vh;
 }
 
+
+/* ================= ASK AI ================= */
+
 .ask-page {
     display: flex;
     flex-direction: column;
@@ -184,6 +189,7 @@ button {
 
 .ask-header h3 {
     font-size: 15px;
+    color: white;
 }
 
 .ask-header p {
@@ -221,6 +227,7 @@ button {
 .welcome h1 {
     font-size: 27px;
     font-weight: 600;
+    color: white;
     margin-bottom: 8px;
 }
 
@@ -268,7 +275,6 @@ button {
     font-size: 13px;
     line-height: 1.6;
     border-radius: 10px;
-    white-space: pre-wrap;
 }
 
 .message.user .message-content {
@@ -329,10 +335,19 @@ button {
     font-size: 20px;
 }
 
+#attach:hover {
+    background: #1a2138;
+    color: white;
+}
+
 #send {
     background: #ffae00;
     color: #080c1c;
     font-size: 19px;
+}
+
+#send:hover {
+    background: #ffc13a;
 }
 
 .small-text {
@@ -342,22 +357,31 @@ button {
     margin-bottom: 9px;
 }
 
+
+/* ================= SUMMARY ================= */
+
 .summary-page {
     display: none;
     padding: 30px;
     overflow-y: auto;
+    background: #0d1224;
 }
 
-.summary-title {
+.summary-title,
+.result-title {
     margin-bottom: 25px;
 }
 
-.summary-title h1 {
+.summary-title h1,
+.result-title h1 {
     font-size: 24px;
+    font-weight: 600;
+    color: white;
     margin-bottom: 6px;
 }
 
-.summary-title p {
+.summary-title p,
+.result-title p {
     color: #7f879d;
     font-size: 13px;
 }
@@ -385,6 +409,7 @@ button {
 
 .box-title h3 {
     font-size: 14px;
+    color: white;
 }
 
 .box-title span {
@@ -400,6 +425,11 @@ button {
     padding: 6px 9px;
 }
 
+.box-title button:hover {
+    background: #ffae00;
+    color: #080c1c;
+}
+
 #notes {
     width: 100%;
     height: 300px;
@@ -411,6 +441,10 @@ button {
     color: white;
     padding: 12px;
     font-size: 13px;
+}
+
+#notes::placeholder {
+    color: #606981;
 }
 
 #notes:focus {
@@ -436,6 +470,11 @@ button {
     padding: 6px 9px;
     font-size: 10px;
     color: #9da5b8;
+}
+
+.option:hover {
+    background: #252d47;
+    color: white;
 }
 
 .option.active {
@@ -479,6 +518,7 @@ button {
 
 .empty p {
     font-size: 11px;
+    color: #697188;
 }
 
 .summary-part {
@@ -490,18 +530,165 @@ button {
 .summary-part h3 {
     font-size: 15px;
     margin-bottom: 8px;
+    color: white;
 }
 
-.summary-part p,
-.summary-part li {
+.summary-part p {
     font-size: 12px;
     line-height: 1.7;
     color: #aeb5c7;
 }
 
-.summary-part ul {
-    padding-left: 20px;
+
+/* ================= RESULT ANALYZER ================= */
+
+.result-page {
+    display: none;
+    padding: 30px;
+    overflow-y: auto;
+    background: #0d1224;
 }
+
+.result-container {
+    display: flex;
+    gap: 18px;
+}
+
+.grade-box,
+.analysis-box {
+    width: 50%;
+    background: #11172b;
+    border: 1px solid #29324d;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.subject {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.subject label {
+    color: #cdd2df;
+    font-size: 13px;
+}
+
+.grade {
+    width: 120px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #303951;
+    background: #0c1122;
+    color: white;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.grade:focus {
+    border-color: #ffae00;
+}
+
+.calculate-button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 11px;
+    border: none;
+    border-radius: 7px;
+    background: #ffae00;
+    color: #080c1c;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.calculate-button:hover {
+    background: #ffc13a;
+}
+
+.gpa {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gpa span {
+    display: block;
+    font-size: 52px;
+    font-weight: bold;
+    color: #ffae00;
+}
+
+.gpa small {
+    color: #7f879d;
+    font-size: 12px;
+}
+
+.performance {
+    border-top: 1px solid #29324d;
+    padding-top: 18px;
+}
+
+.performance h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.performance p {
+    color: #aeb5c7;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.performance-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid #202841;
+}
+
+.performance-item span:first-child {
+    color: #cdd2df;
+    font-size: 12px;
+}
+
+.performance-item span:last-child {
+    color: #ffae00;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.improvement-box {
+    margin-top: 18px;
+    background: #11172b;
+    border: 1px solid #29324d;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.improvement-box h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+#improvement {
+    color: #aeb5c7;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.improvement-good {
+    color: #8fd694;
+}
+
+.improvement-warning {
+    color: #ffae00;
+}
+
+
+/* ================= SCROLLBAR ================= */
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -516,6 +703,13 @@ button {
     border-radius: 10px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background: #ffae00;
+}
+
+
+/* ================= LIGHT MODE ================= */
+
 body.light {
     background: #eeeeee;
     color: #171717;
@@ -528,6 +722,10 @@ body.light .navbar {
 
 body.light .nav h2 {
     color: #171717;
+}
+
+body.light .profile {
+    color: #444444;
 }
 
 body.light .dashboard {
@@ -553,7 +751,22 @@ body.light .menu:hover {
     color: #111111;
 }
 
-body.light .right {
+body.light .menu.active {
+    background: #ffae00;
+    color: #111111;
+}
+
+body.light .profile-box {
+    border-color: #dddddd;
+}
+
+body.light .profile-box small {
+    color: #777777;
+}
+
+body.light .right,
+body.light .summary-page,
+body.light .result-page {
     background: white;
 }
 
@@ -562,12 +775,29 @@ body.light .ask-header {
     border-color: #dddddd;
 }
 
-body.light .ask-header h3 {
+body.light .ask-header h3,
+body.light .summary-title h1,
+body.light .result-title h1 {
     color: #111111;
+}
+
+body.light .ask-header p,
+body.light .summary-title p,
+body.light .result-title p {
+    color: #777777;
 }
 
 body.light .welcome h1 {
     color: #111111;
+}
+
+body.light .welcome p {
+    color: #777777;
+}
+
+body.light .brain {
+    background: #fff3c4;
+    border-color: #dddddd;
 }
 
 body.light .suggestions button {
@@ -591,14 +821,23 @@ body.light .input-box textarea {
     color: #111111;
 }
 
-body.light .summary-page {
-    background: white;
+body.light .input-box textarea::placeholder {
+    color: #999999;
 }
 
 body.light .notes-box,
-body.light .result-box {
+body.light .result-box,
+body.light .grade-box,
+body.light .analysis-box,
+body.light .improvement-box {
     background: white;
     border-color: #dddddd;
+}
+
+body.light .box-title h3,
+body.light .subject label,
+body.light .improvement-box h3 {
+    color: #111111;
 }
 
 body.light #notes {
@@ -607,9 +846,43 @@ body.light #notes {
     border-color: #cccccc;
 }
 
+body.light .option {
+    background: #eeeeee;
+    color: #444444;
+}
+
+body.light .grade {
+    background: #fafafa;
+    color: #111111;
+    border-color: #cccccc;
+}
+
+body.light .performance {
+    border-color: #dddddd;
+}
+
+body.light .performance-item {
+    border-color: #eeeeee;
+}
+
+body.light .performance-item span:first-child {
+    color: #333333;
+}
+
+body.light #improvement {
+    color: #555555;
+}
+
+body.light .btn:hover {
+    background: #eeeeee;
+}
+
 body.light .btn.active {
     background: #ffae00;
 }
+
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 800px) {
 
@@ -626,12 +899,19 @@ body.light .btn.active {
         width: calc(100% - 180px);
     }
 
-    .summary-container {
+    .input-box {
+        width: 90%;
+    }
+
+    .summary-container,
+    .result-container {
         flex-direction: column;
     }
 
     .notes-box,
-    .result-box {
+    .result-box,
+    .grade-box,
+    .analysis-box {
         width: 100%;
     }
 
@@ -642,6 +922,10 @@ body.light .btn.active {
     .navbar,
     .dashboard {
         width: 100%;
+    }
+
+    .navbar {
+        margin-top: 0;
     }
 
     .left {
@@ -661,6 +945,10 @@ body.light .btn.active {
         text-align: center;
     }
 
+    .menu::first-letter {
+        font-size: 18px;
+    }
+
     .profile-box div:last-child {
         display: none;
     }
@@ -673,8 +961,29 @@ body.light .btn.active {
         grid-template-columns: 1fr;
     }
 
+    .welcome {
+        margin-top: 50px;
+    }
+
     .welcome h1 {
         font-size: 21px;
     }
 
+    .summary-page,
+    .result-page {
+        padding: 18px;
+    }
+
+    .summary-title h1,
+    .result-title h1 {
+        font-size: 20px;
+    }
+
+    .subject {
+        gap: 10px;
+    }
+
+    .grade {
+        width: 100px;
+    }
 }
