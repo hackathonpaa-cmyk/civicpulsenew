@@ -35,6 +35,7 @@ if ($result->num_rows === 1) {
         $_SESSION["email"] = $user["email"];
 
         echo "Login successful!";
+        header("Location:dashboard.html");
 
     } else {
 
